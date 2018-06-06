@@ -1,0 +1,12 @@
+{
+  "name": "jarombek-com-emails",
+  "version": "1.0.0",
+  "description": "Functions to Send Emails",
+  "main": "index.js",
+  "repository": "https://github.com/AJarombek/jarombek-com-emails.git",
+  "author": "Andrew Jarombek <ajarombek95@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^4.6.5"
+  }
+}
