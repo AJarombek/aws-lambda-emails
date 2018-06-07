@@ -1,0 +1,110 @@
+/*
+ * Styling for a welcome email when a user subscribes
+ * Author: Andrew Jarombek
+ * Date: 6/6/2018
+ */
+
+@font-face {
+    font-family: Sylexiad;
+    font-weight: normal;
+    src: url("./assets/SylexiadSansThin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Sylexiad-Bold;
+    font-weight: bold;
+    src: url("./assets/SylexiadSansThin-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Dyslexie;
+    font-weight: bold;
+    src: url("./assets/dyslexie-bold.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Sylexiad', Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    font-size: 18px;
+
+    background-image: url("./assets/blizzard.png");
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h5 {
+    font-family: 'Sylexiad-Bold', Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    font-size: 28px;
+}
+
+.emailBody {
+    display: grid;
+    grid-template-rows: [body-title] 20% [body-content-1] 10%
+                        [body-content-2] 10% [body-content-3] 10%
+                        [body-content-4] 10% [body-picture] 20%
+                        [body-footer] 20% [body-bottom];
+    grid-template-columns: [body-left] 100% [body-right];
+
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(170, 170, 170, 0.1);
+
+    margin-top: 40px;
+}
+
+.emailTitle {
+    grid-area: body-title / body-left / body-content-1 / body-right;
+    justify-self: center;
+    align-self: center;
+
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.emailContent1, .emailContent2, .emailContent3 {
+    justify-self: center;
+    align-self: center;
+
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.emailContent1 {
+    grid-area: body-content-1 / body-left / body-content-2 / body-right;
+}
+
+.emailContent2 {
+    grid-area: body-content-2 / body-left / body-content-3 / body-right;
+}
+
+.emailContent3 {
+    grid-area: body-content-3 / body-left / body-content-4 / body-right;
+    justify-self: left;
+}
+
+.jarbekButton {
+    font-family: 'Sylexiad', Helvetica, sans-serif;
+    letter-spacing: 0.4px;
+
+    border-radius: 4px;
+    margin: 4px 2px 4px 2px;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+
+    height: 40px;
+    width: 150px;
+    border: 1.5px solid #30e3ff;
+    font-size: 18px;
+
+    transition: background .4s, box-shadow .4s;
+}
+
+.jarbekButton:hover {
+    box-shadow: 0 1px 5px #aaa;
+    background: #30e3ff;
+}
