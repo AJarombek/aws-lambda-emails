@@ -65,7 +65,7 @@ h5 {
     margin-bottom: 10px;
 }
 
-.emailContent1, .emailContent2, .emailContent3 {
+.emailContent1, .emailContent2, .emailContent3, .emailPicture, .emailFooter {
     justify-self: center;
     align-self: center;
 
@@ -84,6 +84,24 @@ h5 {
 .emailContent3 {
     grid-area: body-content-3 / body-left / body-content-4 / body-right;
     justify-self: left;
+}
+
+.emailPicture {
+    grid-area: body-picture / body-left / body-footer / body-right;
+}
+
+.emailPicture img {
+    padding-top: 30px;
+    height: 60px;
+}
+
+.emailFooter {
+    grid-area: body-footer / body-left / body-bottom / body-right;
+}
+
+.emailFooter a {
+    text-decoration: underline;
+    text-decoration-color: #ccc;
 }
 
 .jarbekButton {
@@ -107,4 +125,20 @@ h5 {
 .jarbekButton:hover {
     box-shadow: 0 1px 5px #aaa;
     background: #30e3ff;
+}
+
+.jarbekSignature {
+    width: 250px;
+}
+
+.jarbekPostSignature {
+    font-family: 'Dyslexie', Helvetica, sans-serif;
+
+    margin-top: 0;
+    margin-left: 12px;
+    font-size: 16px;
+}
+
+.jarbekFooter {
+    color: #aaa;
 }
