@@ -9,7 +9,8 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const juice = require('juice');
 
-const to = 'andrew@jarombek.com';
+//const to = 'andrew@jarombek.com';
+const to = 'abjaro13@stlawu.edu';
 
 // Read the contents of the HTML and CSS files to send with the email
 const html = fs.readFileSync('./welcomeEmail.html', 'utf8');
@@ -32,7 +33,7 @@ const transport = nodemailer.createTransport({
 });
 
 transport.sendMail({
-    from: 'andrew@jarombek.com',
+    from: 'Andrew Jarombek<andrew@jarombek.com>',
     to,
     subject: 'Andrew Jarombek\'s Software Development Blog Subscription',
     html: styledHtml,
@@ -46,6 +47,11 @@ transport.sendMail({
             filename: 'jarombek.png',
             path: './assets/jarombek.png',
             cid: 'jarombek@jarombek.com'
+        },
+        {
+            filename: 'jarombek_signature.png',
+            path: './assets/jarombek_signature.png',
+            cid: 'signature@jarombek.com'
         }
     ],
     auth: {

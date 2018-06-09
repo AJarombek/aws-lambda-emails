@@ -2,7 +2,15 @@
  * Styling for a welcome email when a user subscribes
  * Author: Andrew Jarombek
  * Date: 6/6/2018
+ * Sources: [https://bit.ly/2kKJuH8]
  */
+
+/* Apple Mail does not support max-width so set the width in a media query */
+@media only screen and (min-device-width: 601px) {
+    .content {
+        width: 600px !important;
+    }
+}
 
 @font-face {
     font-family: Sylexiad;
@@ -30,11 +38,33 @@ body {
     font-size: 18px;
 
     background-image: url("cid:background@jarombek.com");
-    margin-left: 0;
-    margin-right: 0;
+
+    margin: 0;
+    padding: 0;
+    min-width: 100% !important;
 }
 
-h5 {
+/*
+For emails styling the body tag is not fully supported, so apply the background image
+style to a container table.
+*/
+.emailBody {
+    background-image: url("cid:background@jarombek.com");
+}
+
+.emailContent {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 20px 0 20px 0;
+
+    background-color: white;
+}
+
+.emailh5 {
+    padding: 40px 30px 20px 30px;
+    text-align: center;
+
     font-family: 'Sylexiad-Bold', Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
@@ -42,52 +72,12 @@ h5 {
     font-size: 28px;
 }
 
-.emailBody {
-    display: grid;
-    grid-template-rows: [body-title] 20% [body-content-1] 10%
-                        [body-content-2] 10% [body-content-3] 10%
-                        [body-content-4] 10% [body-picture] 20%
-                        [body-footer] 20% [body-bottom];
-    grid-template-columns: [body-left] 100% [body-right];
-
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(170, 170, 170, 0.1);
-
-    margin-top: 40px;
+.emailp {
+    padding: 0;
 }
 
-.emailTitle {
-    grid-area: body-title / body-left / body-content-1 / body-right;
-    justify-self: center;
-    align-self: center;
-
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
-
-.emailContent1, .emailContent2, .emailContent3, .emailPicture, .emailFooter {
-    justify-self: center;
-    align-self: center;
-
-    margin-right: 15%;
-    margin-left: 15%;
-}
-
-.emailContent1 {
-    grid-area: body-content-1 / body-left / body-content-2 / body-right;
-}
-
-.emailContent2 {
-    grid-area: body-content-2 / body-left / body-content-3 / body-right;
-}
-
-.emailContent3 {
-    grid-area: body-content-3 / body-left / body-content-4 / body-right;
-    justify-self: left;
-}
-
-.emailPicture {
-    grid-area: body-picture / body-left / body-footer / body-right;
+.emailTopPaddingCell {
+    padding: 20px 0 0 0;
 }
 
 .emailPicture img {
@@ -95,50 +85,44 @@ h5 {
     height: 60px;
 }
 
-.emailFooter {
-    grid-area: body-footer / body-left / body-bottom / body-right;
-}
-
 .emailFooter a {
     text-decoration: underline;
+    color: #aaa;
     text-decoration-color: #ccc;
 }
 
-.jarbekButton {
+.emailButton {
     font-family: 'Sylexiad', Helvetica, sans-serif;
     letter-spacing: 0.4px;
 
     border-radius: 4px;
     margin: 4px 2px 4px 2px;
-    box-shadow: none;
+    padding: 0 30px 0 30px;
     cursor: pointer;
     outline: none;
+    text-align: center;
 
     height: 40px;
     width: 150px;
     border: 1.5px solid #30e3ff;
     font-size: 18px;
 
-    transition: background .4s, box-shadow .4s;
-}
-
-.jarbekButton:hover {
-    box-shadow: 0 1px 5px #aaa;
     background: #30e3ff;
+    box-shadow: 0 1px 5px #aaa;
 }
 
-.jarbekSignature {
+.emailButton a {
+    text-decoration: none;
+}
+
+.emailSignature {
     width: 250px;
 }
 
-.jarbekPostSignature {
+.emailPostSignature {
     font-family: 'Dyslexie', Helvetica, sans-serif;
 
     margin-top: 0;
     margin-left: 12px;
     font-size: 16px;
-}
-
-.jarbekFooter {
-    color: #aaa;
 }

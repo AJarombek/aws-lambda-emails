@@ -5,55 +5,114 @@
     <title>Welcome to Andrew Jarombek's Website</title>
     <link rel="stylesheet" href="./welcomeEmail.css">
 </head>
-<body>
-    <div class="emailBody">
-        <h5 class="emailTitle">Andrew Jarombek - Software Development</h5>
-        <div class="emailContent1">
-            <p>
-                Thank you for subscribing to my software development website!
-            </p>
-            <p>
-                I started developing software the summer of 2016.  This website is the central hub
-                for all the work I do and love.  I am really excited you are joining me on my Software
-                Development journey!
-            </p>
-            <p>
-                Every month I will send you an email with updates on my progress and cool technologies
-                I discovered.  I am trying to write 1-2 blog posts a week, and I will inform you about
-                those as well.  Also included will be updates on the website and some of my other
-                applications!
-            </p>
-            <p>
-                Please confirm your email address by clicking the link below.  For now this will do nothing,
-                but in the future you will have the ability to comment on my blog posts and more!
-            </p>
-        </div>
-        <div class="emailContent2">
-            <a href="https://jarombek.com/blog">
-                <button class="jarbekButton">
-                    VERIFY EMAIL
-                </button>
-            </a>
-        </div>
-        <div class="emailContent3">
-            <p>
-                Thank you!
-            </p>
-            <img class="jarbekSignature" src="assets/jarombek_signature.png" />
-            <p class="jarbekPostSignature">
-                Andrew Jarombek
-            </p>
-        </div>
-        <div class="emailPicture">
-            <a href="https://jarombek.com/blog">
-                <img class="jarbekLogo" src="cid:jarombek@jarombek.com" />
-            </a>
-        </div>
-        <div class="emailFooter">
-            <a href="https://jarombek.com/blog">
-                <p class="jarbekFooter">Unsubscribe</p>
-            </a>
-        </div>
-    </div>
+<!-- specify certain styles in the HTML since some mail clients aren't supportive of
+certain CSS styling -->
+<body bgcolor="#f6f8f1">
+<table class="emailBody" width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <!-- max-width CSS attribute is not supported by Outlook,
+            so add this conditional check -->
+            <!--[if (gte mso 9)|(IE)]>
+            <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+             <tr>
+              <td>
+               <![endif]-->
+                <table class="emailContent" width="100%" align="center" border="0"
+                       cellpadding="10" cellspacing="10">
+                    <tr>
+                        <td valign="top">
+                            <table>
+                                <tr>
+                                    <td class="emailh5" height="40" width="150">
+                                        Andrew Jarombek - Software Development
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td class="emailp" height="40" width="150">
+                                        Thank you for subscribing to my software development website!
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="emailp">
+                            I started developing software the summer of 2016.  This website is the
+                            central hub for all the work I do and love.  I am really excited you are
+                            joining me on my Software Development journey!
+                        </td>
+                        <td class="emailp">
+                            Every month I will send you an email with updates on my progress and
+                            cool technologies I discovered.  I am trying to write 1-2 blog posts a
+                            week, and I will inform you about those as well.  Also included will be
+                            updates on the website and some of my other applications!
+                        </td>
+                        <td class="emailp">
+                            Please confirm your email address by clicking the link below.  For now
+                            this will do nothing, but in the future you will have the ability to
+                            comment on my blog posts and more!
+                        </td>
+                        <td class="emailTopPaddingCell">
+                            <table>
+                                <tr>
+                                    <td class="emailButton" height="40" width="150">
+                                        <a href="https://jarombek.com/blog">
+                                            VERIFY EMAIL
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="emailp">
+                            Thank you!
+                        </td>
+                        <td>
+                            <table width="250" align="left" border="0"
+                                   cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <img class="emailSignature"
+                                             src="cid:signature@jarombek.com" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="emailp emailPostSignature">
+                            Andrew Jarombek
+                        </td>
+                        <td>
+                            <table width="60" align="left" border="0"
+                                   cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <img class="emailLogo" src="cid:jarombek@jarombek.com" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="emailTopPaddingCell">
+                            <table>
+                                <tr>
+                                    <td class="emailFooter" height="20" width="150">
+                                        <a href="https://jarombek.com/blog">
+                                            <p class="jarbekFooter">Unsubscribe</p>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+               <!--[if (gte mso 9)|(IE)]>
+              </td>
+             </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+</table>
 </body>
 </html>
