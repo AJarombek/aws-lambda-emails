@@ -53,12 +53,25 @@ style to a container table.
 }
 
 .emailContent {
+    display: block;
     width: 100%;
     max-width: 600px;
     padding: 10px;
     margin: 20px 0 20px 0;
 
     background-color: white;
+}
+
+/* Displays a preview in some mail clients.  Do not show in the actual email */
+.emailPreheader {
+    color: transparent;
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.emailMain {
+    width: 100%;
 }
 
 .emailh5 {

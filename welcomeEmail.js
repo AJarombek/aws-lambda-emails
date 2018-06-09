@@ -9,8 +9,8 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const juice = require('juice');
 
-//const to = 'andrew@jarombek.com';
-const to = 'abjaro13@stlawu.edu';
+const to = 'andrew@jarombek.com';
+//const to = 'abjaro13@stlawu.edu';
 
 // Read the contents of the HTML and CSS files to send with the email
 const html = fs.readFileSync('./welcomeEmail.html', 'utf8');
