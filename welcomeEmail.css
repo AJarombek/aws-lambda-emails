@@ -57,7 +57,7 @@ style to a container table.
     width: 100%;
     max-width: 600px;
     padding: 10px;
-    margin: 20px 0 20px 0;
+    margin: 20px auto;
 
     background-color: white;
 }
@@ -68,6 +68,9 @@ style to a container table.
     display: none;
     height: 0;
     width: 0;
+    overflow: hidden;
+    line-height: 0;
+    float: left;
 }
 
 .emailMain {
@@ -126,6 +129,7 @@ style to a container table.
 
 .emailButton a {
     text-decoration: none;
+    color: #444 !important;
 }
 
 .emailSignature {
@@ -138,4 +142,12 @@ style to a container table.
     margin-top: 0;
     margin-left: 12px;
     font-size: 16px;
+}
+
+.emailBottom, .emailVerifyButton {
+    margin: 0 auto;
+}
+
+.emailLogo {
+    width: 60px;
 }
