@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Author: Andrew Jarombek
+# Date: 6/10/2018
+# Install dependencies for the emails
+
 yarn init
 
 # NodeJS module for sending emails
