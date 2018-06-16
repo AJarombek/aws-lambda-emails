@@ -18,7 +18,7 @@ AWS.config.update({region: 'us-east-2'});
  */
 exports.sendWelcomeEmail = (event, context, callback) => {
 
-    sendWelcomeEmail(event.to);
+    sendWelcomeEmail(event.to, event.verify, event.unsub);
 
     // Indicate a successful call with no extra information
     callback(null);

@@ -35,3 +35,15 @@ brew install awscli
 
 # Check the awscli version
 aws --version
+
+# Configure the AWS CLI
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration
+aws configure
+
+# List the Lambda functions and their metadata
+aws lambda list-functions
+
+# Call the AWS Lambda function passing it a JSON payload
+aws lambda invoke --function-name sendWelcomeEmail \
+    --payload '{"to":"abjaro13@stlawu.edu"}' output.txt \
+    && cat output.txt
