@@ -1,7 +1,7 @@
 /**
- * Send a welcome Email when someone subscribes
+ * Module to send an email.
  * @author Andrew Jarombek
- * @since 6/5/2018
+ * @since 5/23/2020
  */
 
 const AWS = require('aws-sdk');
@@ -9,24 +9,20 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const juice = require('juice');
 
-/**
- * Send a welcome email after a user subscribes
- * @param to Recipient email address
- * @param verify_cd Verification code
- * @param unsub_cd Unsubscribe code
- */
-function sendWelcomeEmail(to="andrew@jarombek.com", verify_cd, unsub_cd) {
+function send(subject, to="andrew@jarombek.com", attachments = [], htmlFilename="email",
+                   cssFilename="email", replacementValues = {}) {
 
     // Read the contents of the HTML and CSS files to send with the email
-    const html = fs.readFileSync('./welcomeEmail.html', 'utf8');
-    const css = fs.readFileSync('./welcomeEmail.css', 'utf8');
+    let html = fs.readFileSync(`./${htmlFilename}.html`, 'utf8');
+    const css = fs.readFileSync(`./${cssFilename}.css`, 'utf8');
 
     // Replace the templates in the HTML
-    const htmlWithVerify = replace(html, 'verify', verify_cd);
-    const htmlWithUnsub = replace(htmlWithVerify, 'unsub', unsub_cd);
+    for (const key in replacement_values) {
+        html = replace(html, key, replacement_values[key]);
+    }
 
     // Inline the CSS styles in the HTML document
-    const styledHtml = juice.inlineContent(htmlWithUnsub, css);
+    const styledHtml = juice.inlineContent(html, css);
 
     console.info(styledHtml);
 
@@ -57,29 +53,13 @@ function createTransport(password) {
     });
 }
 
-function sendMail(transport, to, html) {
+function sendMail(transport, subject, to, attachments, html) {
     transport.sendMail({
         from: 'Andrew Jarombek<andrew@jarombek.com>',
         to,
-        subject: 'Andrew Jarombek\'s Software Development Blog Subscription',
+        subject,
         html,
-        attachments: [
-            {
-                filename: 'blizzard.png',
-                path: './assets/blizzard.png',
-                cid: 'background@jarombek.com'
-            },
-            {
-                filename: 'jarombek.png',
-                path: './assets/jarombek.png',
-                cid: 'jarombek@jarombek.com'
-            },
-            {
-                filename: 'jarombek_signature.png',
-                path: './assets/jarombek_signature.png',
-                cid: 'signature@jarombek.com'
-            }
-        ]
+        attachments
     }, (err) => {
         if (err) {
             console.error(`Something went wrong sending mail: ${err}`);
@@ -99,4 +79,4 @@ function replace(string, substring, replacement) {
     return string.replace(`{{${substring}}}`, replacement);
 }
 
-module.exports = sendWelcomeEmail;
+module.exports = send;

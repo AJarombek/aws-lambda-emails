@@ -557,6 +557,13 @@ semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
+"send-email@file:../../send-email":
+  version "1.0.0"
+  dependencies:
+    aws-sdk "^2.254.1"
+    juice "^4.3.1"
+    nodemailer "^4.6.5"
+
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"

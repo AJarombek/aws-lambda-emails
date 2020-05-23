@@ -1,8 +1,11 @@
-# jarombek-com-emails
+# aws-lambda-emails
 
 > *Formerly jarombek-com-emails*
 
 ### Overview
+
+AWS Lambda functions for sending emails.  Used by my `saintsxctf.com` and `jarombek.com` 
+applications.
 
 ### Commands
 
@@ -11,6 +14,15 @@
 rm welcomeEmail.zip
 zip -r welcomeEmail.zip .
 ```
+
+### Files
+
+| Filename         | Description                                                         |
+|------------------|---------------------------------------------------------------------|
+| `dist`           | AWS Lambda `zip` files ready for distribution.                      |
+| `jarombek-com`   | Emails for the `jarombek.com` application.                          |
+| `saints-xctf`    | Emails for the `SaintsXCTF` application.                            |
+| `send-email`     | Reusable module for sending emails on AWS.                          |
 
 ### Resources
 

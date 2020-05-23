@@ -5,9 +5,9 @@
  */
 
 const AWS = require('aws-sdk');
-const sendWelcomeEmail = require('./welcomeEmail');
+const sendWelcomeEmail = require('./email');
 
-AWS.config.update({region: 'us-east-2'});
+AWS.config.update({region: 'us-east-1'});
 
 /**
  * Invoke an AWS function via the handler object

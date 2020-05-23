@@ -12,26 +12,7 @@
     }
 }
 
-@font-face {
-    font-family: Sylexiad;
-    font-weight: normal;
-    src: url("./assets/SylexiadSansThin.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: Sylexiad-Bold;
-    font-weight: bold;
-    src: url("./assets/SylexiadSansThin-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: Dyslexie;
-    font-weight: bold;
-    src: url("./assets/dyslexie-bold.ttf") format("truetype");
-}
-
 body {
-    font-family: 'Sylexiad', Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -81,7 +62,6 @@ style to a container table.
     padding: 40px 30px 20px 30px;
     text-align: center;
 
-    font-family: 'Sylexiad-Bold', Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -108,7 +88,6 @@ style to a container table.
 }
 
 .emailButton {
-    font-family: 'Sylexiad', Helvetica, sans-serif;
     letter-spacing: 0.4px;
 
     border-radius: 4px;
@@ -137,8 +116,6 @@ style to a container table.
 }
 
 .emailPostSignature {
-    font-family: 'Dyslexie', Helvetica, sans-serif;
-
     margin-top: 0;
     margin-left: 12px;
     font-size: 16px;
