@@ -29,6 +29,7 @@ function sendForgotPasswordEmail(to, code, username, firstName, lastName) {
 
     const replacementValues = {
         code,
+        urlCode: `?code=${code}`,
         username,
         firstName,
         lastName,

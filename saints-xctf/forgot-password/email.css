@@ -21,8 +21,24 @@ body {
     width: 100%;
 }
 
+.emailContent {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 20px auto;
+
+    background-color: white;
+}
+
+.emailTitle {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px 0 0 10px;
+}
+
 .emailh5 {
-    padding: 40px 30px 20px 30px;
+    padding: 10px 30px 20px 30px;
     text-align: center;
 
     font-weight: bold;
@@ -32,7 +48,7 @@ body {
 }
 
 .emailh6 {
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
 
     font-weight: bold;
     font-style: normal;
@@ -42,14 +58,47 @@ body {
 
 .emailp {
     padding: 0;
+    font-size: 14px;
 }
 
 .emailCourier {
     font-family: "Courier New", monospace;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.verifyCode {
+    margin-bottom: 40px;
 }
 
 .emailLogo {
     padding-top: 10px;
     height: 80px;
     width: 80px;
+    margin-left: 0;
+}
+
+.resetPasswordButton {
+    margin-top: 40px;
+}
+
+.resetButton {
+    border-radius: 4px;
+    margin: 4px 2px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+
+    height: 40px;
+    width: 150px;
+
+    background: #990000;
+    box-shadow: 0 1px 5px #aaa;
+}
+
+.resetButton a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
 }
