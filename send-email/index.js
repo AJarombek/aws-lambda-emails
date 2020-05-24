@@ -1,5 +1,5 @@
 /**
- * Module to send an email.
+ * Module to send an email using NodeMailer and Gmail.
  * @author Andrew Jarombek
  * @since 5/23/2020
  */
@@ -9,6 +9,17 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const juice = require('juice');
 
+/**
+ * Main function to configure and send an email.
+ * @param subject The subject line of the email.
+ * @param to Who the email is sent to.
+ * @param attachments Email attachment files.
+ * @param htmlFilename Name of the html file to use for the email body.
+ * @param cssFilename Name of the css file used to style the email body.
+ * @param replacementValues Values in the HTML file to replace.  The name of the properties in the
+ * object matches values in the html to replace.  These properties values are the
+ * replacement values.
+ */
 function send(subject, to="andrew@jarombek.com", attachments = [], htmlFilename="email",
                    cssFilename="email", replacementValues = {}) {
 
@@ -17,8 +28,8 @@ function send(subject, to="andrew@jarombek.com", attachments = [], htmlFilename=
     const css = fs.readFileSync(`./${cssFilename}.css`, 'utf8');
 
     // Replace the templates in the HTML
-    for (const key in replacement_values) {
-        html = replace(html, key, replacement_values[key]);
+    for (const key in replacementValues) {
+        html = replace(html, key, replacementValues[key]);
     }
 
     // Inline the CSS styles in the HTML document
@@ -36,11 +47,15 @@ function send(subject, to="andrew@jarombek.com", attachments = [], htmlFilename=
             const password = secretObject.password;
 
             const transport = createTransport(password);
-            sendMail(transport, to, styledHtml);
+            sendMail(transport, subject, to, attachments, styledHtml);
         }
     });
 }
 
+/**
+ * Configure how the email is transported.
+ * @param password Application specific Gmail password used to send emails in a secure manner.
+ */
 function createTransport(password) {
     return nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -53,6 +68,14 @@ function createTransport(password) {
     });
 }
 
+/**
+ * Helper method to send the email and check for errors.
+ * @param transport Transport object used to send emails.
+ * @param subject The subject line of the email.
+ * @param to Who the email is sent to.
+ * @param attachments Email attachment files.
+ * @param html Styled HTML file used as the email body.
+ */
 function sendMail(transport, subject, to, attachments, html) {
     transport.sendMail({
         from: 'Andrew Jarombek<andrew@jarombek.com>',

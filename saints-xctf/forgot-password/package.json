@@ -1,9 +1,9 @@
 {
-  "name": "jarombek-com-welcome-lambda-email",
+  "name": "saints-xctf-forgot-password-lambda-email",
   "version": "1.0.0",
-  "description": "Function to Send a Welcome Email to New Subscribers",
+  "description": "Function to Send a Forgot Password Email to Users",
   "main": "sendEmailNode.js",
-  "repository": "https://github.com/AJarombek/aws-lambda-emails/jarombek-com/welcome",
+  "repository": "https://github.com/AJarombek/aws-lambda-emails/saints-xctf/forgot-password",
   "author": "Andrew Jarombek <andrew@jarombek.com>",
   "keywords": [
     "NodeJS",

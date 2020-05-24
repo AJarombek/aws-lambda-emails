@@ -5,9 +5,8 @@
  * @since 6/10/2018
  */
 
-const sendWelcomeEmail = require('./welcomeEmail');
+const sendWelcomeEmail = require('./email');
 
-// Pass once command line argument with the recipient email
-const to = process.argv[2];
+const [_, __, to, verify_cd, unsub_cd] = process.argv;
 
-sendWelcomeEmail(to);
+sendWelcomeEmail(to, verify_cd, unsub_cd);

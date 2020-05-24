@@ -4,10 +4,6 @@
  * @since 6/5/2018
  */
 
-const AWS = require('aws-sdk');
-const nodemailer = require('nodemailer');
-const fs = require('fs');
-const juice = require('juice');
 const send = require('send-email');
 
 /**
