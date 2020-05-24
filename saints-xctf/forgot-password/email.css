@@ -1,0 +1,55 @@
+/*
+ * Styling for a forgot password email.
+ * Author: Andrew Jarombek
+ * Date: 5/24/2020
+ */
+
+/* Apple Mail does not support max-width so set the width in a media query */
+@media only screen and (min-device-width: 601px) {
+    .content {
+        width: 600px !important;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100% !important;
+}
+
+.emailMain {
+    width: 100%;
+}
+
+.emailh5 {
+    padding: 40px 30px 20px 30px;
+    text-align: center;
+
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    font-size: 28px;
+}
+
+.emailh6 {
+    padding: 20px 10px 20px 10px;
+
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    font-size: 18px;
+}
+
+.emailp {
+    padding: 0;
+}
+
+.emailCourier {
+    font-family: "Courier New", monospace;
+}
+
+.emailLogo {
+    padding-top: 10px;
+    height: 80px;
+    width: 80px;
+}

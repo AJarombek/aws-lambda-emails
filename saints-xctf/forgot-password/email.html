@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SaintsXCTF Reset Password Request</title>
+</head>
+<body bgcolor="#f6f8f1">
+<table class="emailBody" width="100%" bgcolor="#f6f8f1" border="0"
+       cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+      <div class="emailContent">
+        <table class="emailMain" width="100%" align="center" border="0"
+               cellpadding="10" cellspacing="10">
+          <tr>
+            <td>
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <table class="emailHeader" align="center"
+                           border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                      <tr>
+                        <td>
+                          <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                              <td width="80" height="80">
+                                <img class="emailLogo" src="cid:saintsxctf@jarombek.com" alt="" />
+                                <p class="emailTitle">
+                                  SaintsXCTF
+                                </p>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <p class="emailh5">
+                      SaintsXCTF - Reset Password Request
+                    </p>
+                    <p class="emailp">
+                      Hi {{firstName}} {{lastName}},
+                    </p>
+                    <p class="emailp">
+                      You requested to reset you password.  This email contains a verification code
+                      to use when entering your new password on the website.
+                    </p>
+                    <p class="emailh6">
+                      Your username:
+                    </p>
+                    <p class="emailCourier">
+                      {{username}}
+                    </p>
+                    <p class="emailh6">
+                      Your verification code:
+                    </p>
+                    <p class="emailCourier">
+                      {{code}}
+                    </p>
+                    <p class="emailp">
+                      Either manually enter this verification code into the forgot password page or
+                      click the link below.
+                    </p>
+                    <table class="resetPasswordButton" align="center"
+                           border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                      <tr>
+                        <td align="center">
+                          <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                              <td class="resetButton" height="40" width="150">
+                                <a href="https://{{prefix}}saintsxctf.com/forgotpassword/reset?code={{code}}">
+                                  RESET PASSWORD
+                                </a>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

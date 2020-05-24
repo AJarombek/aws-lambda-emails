@@ -6,6 +6,6 @@
 
 const sendForgotPasswordEmail = require('./email');
 
-const [_, __, to, verify_cd, unsub_cd] = process.argv;
+const [_, __, to, code, username, firstName, lastName] = process.argv;
 
-sendForgotPasswordEmail(to, verify_cd, unsub_cd);
+sendForgotPasswordEmail(to, code, username, firstName, lastName);
