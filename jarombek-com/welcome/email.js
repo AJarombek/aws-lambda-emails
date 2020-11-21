@@ -4,7 +4,7 @@
  * @since 6/5/2018
  */
 
-const send = require('send-email');
+const send = require('index');
 
 /**
  * Send a welcome email after a user subscribes

@@ -1,5 +1,5 @@
 {
-  "name": "send-email",
+  "name": "aws-lambda-emails",
   "version": "1.0.0",
   "description": "Reusable module which facilitates sending emails with AWS Lambda",
   "main": "index.js",
@@ -14,5 +14,6 @@
     "aws-sdk": "^2.254.1",
     "juice": "^4.3.1",
     "nodemailer": "^4.6.5"
-  }
+  },
+  "typings": "./index.d.ts"
 }

@@ -11,6 +11,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "send-email": "file:../../send-email"
+    "aws-lambda-emails": "file:../"
   }
 }

@@ -4,7 +4,7 @@
 
 ### Overview
 
-AWS Lambda functions for sending emails.  Used by my `saintsxctf.com` and `jarombek.com` 
+Module which allows AWS Lambda functions to send emails.  Used by my `saintsxctf.com` and `jarombek.com` 
 applications.
 
 ### Commands
@@ -17,12 +17,13 @@ zip -r welcomeEmail.zip .
 
 ### Files
 
-| Filename         | Description                                                         |
-|------------------|---------------------------------------------------------------------|
-| `dist`           | AWS Lambda `zip` files ready for distribution.                      |
-| `jarombek-com`   | Emails for the `jarombek.com` application.                          |
-| `saints-xctf`    | Emails for the `SaintsXCTF` application.                            |
-| `send-email`     | Reusable module for sending emails on AWS.                          |
+| Filename         | Description                                                                    |
+|------------------|--------------------------------------------------------------------------------|
+| `index.js`       | Entrypoint to the module.                                                      |
+| `index.d.ts`     | Type definitions for the module so that this code can be used with TypeScript. |
+| `setup.sh`       | Bash commands executed while working on the module.                            |
+| `package.json`   | Dependencies and metadata about the module.                                    |
+| `yarn.lock`      | Lock file with the specific versions of dependencies used.                     |
 
 ### Resources
 
